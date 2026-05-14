@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 大模型 · 全球信号评估 2026.5.13-14</title>
+<style>
+:root {
+  --bg: #141413;
+  --bg-surface: #1a1a18;
+  --bg-hover: #222220;
+  --text-primary: #faf9f5;
+  --text-secondary: #b0aea5;
+  --text-muted: #6b6a62;
+  --border: rgba(38,37,30,0.25);
+  --border-light: rgba(38,37,30,0.12);
+  --accent: #8b5cf6;
+  --accent-light: rgba(139,92,246,0.15);
+  --shadow: rgba(0,0,0,0.14) 0 4px 16px, rgba(38,37,30,0.1) 0 0 0 1px;
+  --gradient: linear-gradient(135deg, #8b5cf6, #6366f1);
+  --glow: 0 0 20px rgba(139,92,246,0.2);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --font-body: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+  --green: #22c55e;
+  --green-bg: rgba(34,197,94,0.12);
+  --amber: #f59e0b;
+  --amber-bg: rgba(245,158,11,0.12);
+  --blue: #3b82f6;
+  --blue-bg: rgba(59,130,246,0.12);
+  --rose: #e11d48;
+  --rose-bg: rgba(225,29,72,0.12);
+  --cyan: #06b6d4;
+  --cyan-bg: rgba(6,182,212,0.12);
+  --purple: #a855f7;
+  --purple-bg: rgba(168,85,247,0.12);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  padding: 32px;
+  min-width: 1200px;
+}
+.container { max-width: 1400px; margin: 0 auto; }
+
+/* HEADER */
+.header {
+  text-align: center;
+  padding: 40px 0 24px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+.header h1 {
+  font-size: 36px;
+  font-weight: 600;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 2px;
+}
+.header .subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  letter-spacing: 1px;
+}
+.header .meta {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+/* SIGNAL CORE MODEL */
+.signal-model {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  padding: 36px 40px;
+  margin-bottom: 32px;
+  border: 1px solid var(--border);
+  position: relative;
+}
+.model-title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 28px;
+  letter-spacing: 2px;
+}
+.model-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.pillar {
+  background: var(--bg-hover);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  border: 1px solid var(--border);
+}
+.pillar.pillar-green { border-top: 3px solid var(--green); }
+.pillar.pillar-amber { border-top: 3px solid var(--amber); }
+.pillar.pillar-blue { border-top: 3px solid var(--blue); }
+.pillar h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+.pillar.pillar-green h3 { color: var(--green); }
+.pillar.pillar-amber h3 { color: var(--amber); }
+.pillar.pillar-blue h3 { color: var(--blue); }
+.pillar-item {
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border-light);
+  line-height: 1.5;
+}
+.pillar-item:last-child { border-bottom: none; }
+.pillar-item strong { color: var(--text-primary); }
+
+.center-circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px 16px;
+}
+.center-ring {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--glow);
+  margin-bottom: 16px;
+}
+.center-ring span {
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 2px;
+}
+.center-circle .ring-labels {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+.center-circle .ring-labels span {
+  padding: 4px 12px;
+  background: var(--bg-hover);
+  border-radius: 20px;
+  border: 1px solid var(--border-light);
+}
+
+/* COMPARISON BOX */
+.comparison-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 24px;
+}
+.compare-box {
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+.compare-box.surface { background: rgba(245,158,11,0.06); }
+.compare-box.structural { background: rgba(34,197,94,0.06); }
+.compare-box h4 {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.compare-box.surface h4 { color: var(--amber); }
+.compare-box.structural h4 { color: var(--green); }
+.compare-box p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* NEWS SECTION */
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 32px 0 20px;
+  padding-left: 12px;
+  border-left: 3px solid var(--accent);
+  letter-spacing: 1px;
+}
+.news-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+/* TAG SYSTEM */
+.tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+.tag-green { background: var(--green-bg); color: var(--green); }
+.tag-amber { background: var(--amber-bg); color: var(--amber); }
+.tag-blue { background: var(--blue-bg); color: var(--blue); }
+.tag-rose { background: var(--rose-bg); color: var(--rose); }
+.tag-cyan { background: var(--cyan-bg); color: var(--cyan); }
+.tag-purple { background: var(--purple-bg); color: var(--purple); }
+
+/* SOURCE LINKS */
+.source-line {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  word-break: break-all;
+}
+.source-line a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.source-line a:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+.source-line .sep {
+  color: var(--text-muted);
+  margin: 0 2px;
+}
+
+/* NEWS CARD */
+.news-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  border: 1px solid var(--border);
+  transition: border-color 0.2s;
+}
+.news-card:hover { border-color: rgba(139,92,246,0.3); }
+.news-card .card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.news-card .signal-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.signal-dot.high { background: var(--green); }
+.signal-dot.medium { background: var(--amber); }
+.signal-dot.low { background: var(--text-muted); }
+.news-card h3 {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  flex: 1;
+}
+.news-card .tags { margin-bottom: 8px; }
+.news-card .excerpt {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.news-card .analysis-box {
+  background: var(--bg-hover);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  border-left: 2px solid var(--accent);
+  margin-top: 8px;
+}
+.news-card .analysis-box strong {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* SINGLE COLUMN */
+.news-grid-single {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+/* IMPACT SECTION */
+.impact-section {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  padding: 32px 40px;
+  margin-bottom: 24px;
+  border: 1px solid var(--border);
+}
+.impact-title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--amber);
+  margin-bottom: 24px;
+  letter-spacing: 2px;
+}
+.impact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.impact-card {
+  background: var(--bg-hover);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  border: 1px solid var(--border);
+}
+.impact-card h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-light);
+}
+.impact-card.personal h4 { color: var(--cyan); }
+.impact-card.market h4 { color: var(--amber); }
+.impact-card ol {
+  padding-left: 18px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+.impact-card ol li { margin-bottom: 6px; }
+.impact-card ol li strong { color: var(--text-primary); }
+.impact-card .impact-tag {
+  display: inline-block;
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+}
+.impact-tag.short { background: rgba(34,197,94,0.12); color: var(--green); }
+.impact-tag.mid { background: rgba(245,158,11,0.12); color: var(--amber); }
+.impact-tag.long { background: rgba(59,130,246,0.12); color: var(--blue); }
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+  margin-top: 32px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.footer a { color: var(--accent); text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .model-grid { grid-template-columns: 1fr; }
+  .news-grid { grid-template-columns: 1fr; }
+  .impact-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>AI 大模型 · 全球信号评估</h1>
+  <div class="subtitle">每日资讯精选 · 穿透表层叙事 · 定位结构信号</div>
+  <div class="meta">2026年5月13-14日 | 覆盖 18+ 信源 · 20 条核心信号</div>
+</div>
+
+<!-- 3D Signal Model -->
+<div class="signal-model">
+  <div class="model-title">▎信 号 评 估 三 维 模 型</div>
+  <div class="model-grid">
+    <div class="pillar pillar-green">
+      <h3>01 数据锚定</h3>
+      <div class="pillar-item"><strong>数字可验证</strong><br>每条结论绑定具体数字：9500亿、170亿、25亿、89.7亿</div>
+      <div class="pillar-item"><strong>交叉信源</strong><br>每件事至少2-3个独立信源覆盖（Bloomberg/NYT/澎湃）</div>
+      <div class="pillar-item"><strong>时间坐标</strong><br>精确到日：5.7-5.14七天内增量事件</div>
+    </div>
+    <div class="center-circle">
+      <div class="center-ring"><span>信号</span></div>
+      <div class="ring-labels">
+        <span>从数据中看位置</span>
+        <span>从结构中看方向</span>
+        <span>从对比中看本质</span>
+      </div>
+    </div>
+    <div class="pillar pillar-blue">
+      <h3>03 闭环推理</h3>
+      <div class="pillar-item"><strong>因果链</strong><br>融资→算力锁定→话语权→定价权，逐层推导</div>
+      <div class="pillar-item"><strong>反证检验</strong><br>如果A不起作用，替代方案是什么？多路线并行</div>
+      <div class="pillar-item"><strong>时间检验</strong><br>短期叙事 vs 长期结构，区分噪音与趋势</div>
+    </div>
+  </div>
+  <div class="comparison-row">
+    <div class="compare-box surface">
+      <h4>☰ 表层叙事（弱信号）</h4>
+      <p>「Anthropic估值又涨了」「思科裁员了」「田渊栋创业了」—— 每天都有很多事件，孤立看都是新闻，连起来才是信号。</p>
+    </div>
+    <div class="compare-box structural">
+      <h4>⚡ 结构性解读（强信号）</h4>
+      <p>融资纪录在加速刷新（136亿→170亿仅24小时）→ 资本集中度飙升 → 中间层模型公司进入融资寒冬。谁掌握算力入口谁定价，这不是估值，是权力转移。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SECTION 1: CAPITAL ==================== -->
+<h2 class="section-title">资本博弈 · 融资变局</h2>
+<div class="news-grid">
+
+<div class="news-card">
+  <div class="card-header">
+    <div class="signal-dot high"></div>
+    <h3>Anthropic 9500亿美元估值洽谈300-500亿融资</h3>
+  </div>
+  <div class="tags"><span class="tag tag-green">信号强</span><span class="tag tag-purple">国际</span><span class="tag tag-cyan">资本</span></div>
+  <div class="excerpt">G轮3800亿到5月9500亿仅3个月，超越OpenAI 8520亿美元。年化收入从90亿飙至440亿美元。Claude Code年化收入超25亿美元，占全球GitHub提交量约4%。</div>
+  <div class="source-line"><a href="https://www.nytimes.com" target="_blank" rel="noopener">NYT</a><span class="sep"> / </span><a href="https://www.bloomberg.com" target="_blank" rel="noopener">Bloomberg</a><span class="sep"> / </span><a href="https://www.thepaper.cn" target="_blank" rel="noopener">澎湃</a><span class="sep"> / </span><a href="https://www.36kr.com" target="_blank" rel="noopener">36氪</a></div>
+  <div class="analysis-box"><strong>穿透分析：</strong> 不是估值在涨，是权力在转移。Anthropic用"四路进贡"结构（SpaceX即期算力+亚马逊/谷歌远期资金+微软Azure+Broadcom芯片）把自己变成谁都不敢失去的算力中枢。营收争议（总额法vs净额法差额80亿美金）是IPO前最大隐患。</div>
+</div>
+
+<div class="news-card">
+  <div class="card-header">
+    <div class="signal-dot high"></div>
+    <h3>阶跃星辰170亿融资创中国大模型纪录</h3>
+  </div>
+  <div class="tags"><span class="tag tag-green">信号强</span><span class="tag tag-cyan">资本</span><span class="tag tag-blue">国产</span></div>
+  <div class="excerpt">一天前月之暗面刚完成20亿美元(136亿)融资，阶跃星辰即以25亿美元(170亿)刷新纪录。已拆除红筹架构完成股改，加速筹备港股IPO。香港投资管理公司(HKIC)大模型领域独家押注。</div>
+  <div class="source-line"><a href="https://zhidx.com" target="_blank" rel="noopener">智东西</a><span class="sep"> / </span><a href="https://www.36kr.com" target="_blank" rel="noopener">36氪</a></div>
+  <div class="analysis-box"><strong>穿透分析：</strong> 中国大模型融资纪录在24小时内连续被打破——这不是个案，这是加速集中化。资本不再分散撒网，而是聚焦到最后几家头部玩家。中间层模型公司的融资寒冬在加速。</div>
+</div>
+
+<div class="news-card">
+  <div class="card-header">
+    <div class="signal-dot high"></div>
+    <h3>微软法庭证词：对OpenAI累计投入超1000亿美元</h3>
+  </div>
+  <div class="tags"><span class="tag tag-green">信号强</span><span class="tag tag-purple">国际</span><span class="tag tag-amber">法庭</span></div>
+  <div class="excerpt">微软交易高管Michael Wetter在Musk诉Altman案中作证，含原始投资、基础设施和计算托管成本。1000亿美元门槛标志着单一企业对单一AI公司的最大赌注。</div>
+  <div class="source-line"><a href="https://www.bloomberg.com" target="_blank" rel="noopener">Bloomberg</a><span class="sep"> / </span><a href="https://www.theinformation.com" target="_blank" rel="noopener">The Information</a></div>
+  <div class="analysis-box"><strong>穿透分析：</strong> 1000亿美元投下去，关系从"投资"变成了"绑定"。微软与OpenAI协议已解除排他性，双方都在为分手做准备。投入越大，退出越难。这不是财务决策，是路径锁定。</div>
+</div>
+
+<div class="news-card">
+  <div class="card-header">
+    <div class="signal-dot high"></div>
+    <h3>DeepSeek vs 月之暗面：百亿美元涌入下的双雄博弈</h3>
+  </div>
+  <div class="tags"><span class="tag tag-green">信号强</span><span class="tag tag-cyan">资本</span><span class="tag tag-blue">国产</span></div>
+  <div class="excerpt">DeepSeek首轮外部融资最高500亿（~73亿美元），估值3500亿；月之暗面20亿美元估值200亿美元。两条路线：开源基础设施层 vs 能力服务层，估值模型迥异。</div>
+  <div class="source-line"><a href="https://www.tmtpost.com" target="_blank" rel="noopener">钛媒体</a><span class="sep"> / </span><a href="https://www.36kr.com" target="_blank" rel="noopener">36氪</a></div>
+  <div class="analysis-box"><strong>穿透分析：</strong> 这是两种估值逻辑的正面碰撞——"先圈地后收割"（互联网经典剧本）vs "按结果定价"（SaaS溢价逻辑）。关键看谁能跑通指数级营收增长。</div>
+</div>
+
+<div class="news-card">
+  <div class="card-header">
+    <div class="signal-dot high"></div>
+    <h3>Nvidia今年已承诺400亿美元AI股权交易</h3>
+  </div>
+  <div class="tags"><span class="tag tag-amber">信号中</span><span class="tag tag-purple">国际</span><span class="tag tag-cyan">生态</span></div>
+  <div class="excerpt">英伟达2026年在AI公司股权投资超过400亿美元，继续扮演AI生态系统最大投资者。黄仁勋临时登上空军一号随特朗普访华，市场预期H200芯片供应放宽。</div>
+  <div class="source-line"><a href="https://techcrunch.com" target="_blank" rel="noopener">TechCrunch</a><span class="sep"> / </span><a href="https://www.bloomberg.com" target="_blank" rel="noopener">Bloomberg</a><span class="sep"> / </span><a href="https://www.huxiu.com" target="_blank" rel="noopener">虎嗅</a></div>
+  <div class="analysis-box"><strong>穿透分析：</strong> Nvidia既卖铲子又入股矿工——双重身份让它在AI供应链中的位置从"供应商"变成"生态调度者"。黄仁勋访华不是外交，是商业路线中的核心变量。</div>
+</div>
+
+<div class="news-card">
+  <div class="card-header">
+    <div class="signal-dot high"></div>
+    <h3>AI债券热潮冲击华尔街，Alphabet被迫海外融资</h3>
+  </div>
+  <div class="tags"><span class="tag tag-amber">信号中</span><span class="tag tag-purple">国际</span><span class="tag tag-amber">金融</span></div>
+  <div class="excerpt">大量AI公司发债涌入市场，华尔街难以消化，Alphabet被迫寻求海外债券市场融资。市场对AI项目的风险定价出现分歧。</div>
+  <div class="source-line"><a href="https://www.bloomberg.com" target="_blank" rel="noopener">Bloomberg</a></div>
+  <div class="analysis-box"><strong>穿透分析：</strong> 债券市场是实体经济的温度计。当AI发债多到华尔街吃不下，说明市场对AI的回报预期和风险定价正在重新校准。过热降温的信号。</div>
+</div>
+
+</div>
+
+<!-- ==================== SECTION 2: CHINESE AI ECOSYSTEM ==================== -->
+<h2 class="section-title">中国AI · 生态分化</h2>
+<div class="news-grid">
+
+<div class="news-card">
+  <div class="card-header">
+    <div class="signal-dot high"></div>
+    <h3>百度Create2026: DuMate通用智能体 + DAA新度量衡</h3>
+  </div>
+  <div class="tags"><span class="tag tag-green">信号强</span><span class="tag tag-blue">国产</span><span class="tag tag-cyan">产品</span></div>
+  <div class="excerpt">李彦宏推出通用智能体产品DuMate（移动端App），提出"日活智能体数（DAA）"替代Token消耗作为AI时代新度量衡，预测全球DAA将超100亿。</div>
+  <div class="source-line"><a href="https://www.thepaper.cn" target="_blank" rel="noopener">澎湃</a><span class="sep"> / </span><a href="https://www.caixin.com" target="_blank" rel="noopener">财新</a><span class="sep"> / </span><a href="https://www.guancha.cn" target="_blank" rel="noopener">观察者网</a></div>
+  <div class="analysis-box"><strong>穿透分析：</strong> 从"拼Token消耗"到"比智能体活跃度"——百度在重新定义游戏规则争夺话语权。DAA能否成为行业标准，取决于有多少生态玩家接这套度量体系。</div>
+</div>
+
+<div class="news-card">
+  <div class="card-header">
+    <div class="signal-dot high"></div>
+    <h3>腾讯Q1：马化腾称AI"上船后发现船漏水"</h3>
+  </div>
+  <div class="tags"><span class="tag tag-green">信号强</span><span class="tag tag-blue">国产</span><span class="tag tag-amber">财报</span></div>
+  <div class="excerpt">营收1964.6亿元同比增9%，但AI投入短期拉低利润增速17个百分点。马化腾坦承腾讯AI起步较晚，"现在站上去了还坐不下去"。刘炽平称没有大裁员计划。</div>
+  <div class="source-line"><a href="https://www.thepaper.cn" target="_blank" rel="noopener">澎湃</a><span class="sep"> / </span><a href="https://www.sina.com.cn" target="_blank" rel="noopener">新浪</a><span class="sep"> / </span><a href="https://www.huxiu.com" target="_blank" rel="noopener">虎嗅</a></div>
+  <div class="analysis-box"><strong>穿透分析：</strong> 马化腾的"上船漏水"既是坦诚也是信号——腾讯AI战略从"可上可不上"变成了"必须上"。利润降17个点也要投，这个决心的背后是对"不上船就会掉队"的判断。</div>
+</div>
+
+<div class="news-card">
+  <div class="card-header">
+    <div class="signal-dot high"></div>
+    <h3>阿里Q4: AI收入89.7亿连续11季三位数增长</h3>
+  </div>
+  <div class="tags"><span class="tag tag-green">信号强</span><span class="tag tag-blue">国产</span><span class="tag tag-amber">财报</span></div>
+  <div class="excerpt">云外部收入增40%（9季度最快），AI收入占比达30%、年化破358亿元。CEO吴泳铭称AI投入正式进入商业化回报周期。但集团经调整EBITA同比降84%。</div>
+  <div class="source-line"><a href="https://www.caixin.com" target="_blank" rel="noopener">财新</a><span class="sep"> / </span><a href="https://www.thepaper.cn" target="_blank" rel="noopener">澎湃</a><span class="sep"> / </span><a href="https://www.huxiu.com" target="_blank" rel="noopener">虎嗅</a></div>
+  <div class="analysis-box"><strong>穿透分析：</strong> AI收入三位数增长是亮点，但集团利润骤降84%是代价。AI的商业化回报正在发生，但远远追不上投入速度。这是所有大厂共同面对的结构性矛盾：不投会死，投了也疼。</div>
+</div>
+
+<div class="news-card">
+  <div class="card-header">
+    <div class="signal-dot high"></div>
+    <h3>田渊栋离开Meta创业：Recursive_SI募资6.5亿美元</h3>
+  </div>
+  <div class="tags"><span class="tag tag-amber">信号中</span><span class="tag tag-purple">国际</span><span class="tag tag-cyan">创业</span></div>
+  <div class="excerpt">前Meta AI研究员田渊栋与Richard Socher联合创立Recursive_SI，估值46.5亿美元。GV、Greycroft领投，AMD、NVIDIA参投。目标是"递归自我改进AI"的开放式科学发现。</div>
+  <div class="source-line"><a href="https://www.36kr.com" target="_blank" rel="noopener">36氪</a><span class="sep"> / </span><a href="https://www.jiqizhixin.com" target="_blank" rel="noopener">机器之心</a></div>
+  <div class="analysis-box"><strong>穿透分析：</strong> 顶级AI科学家密集创业本身就是一个信号——实验室的边界已经不够了。从Meta到创业，从论文到产品，AI人才正在从研究机构流向商业化战场。</div>
+</div>
+
+<div class="news-card">
+  <div class="card-header">
+    <div class="signal-dot high"></div>
+    <h3>MiniMax推出Mavis：Agent的"三省六部"</h3>
+  </div>
+  <div class="tags"><span class="tag tag-amber">信号中</span><span class="tag tag-blue">国产</span><span class="tag tag-cyan">产品</span></div>
+  <div class="excerpt">Mavis(MiniMax as a Jarvis)桌面Agent新模式，底层Team Engine挂载Leader/Worker/Verifier三类角色，Worker与Verifier形成对抗式关系，防止Agent"媾和"。接入微信/飞书。</div>
+  <div class="source-line"><a href="https://www.36kr.com" target="_blank" rel="noopener">36氪</a><span class="sep"> / </span>APPSO</div>
+  <div class="analysis-box"><strong>穿透分析：</strong> 从"让AI自己规划"到"让AI之间互相验收"——Agent架构从个体智能转向工程系统。这是量变到质变的关键一步：多个Agent的"对抗"比"单干"靠谱。</div>
+</div>
+
+<div class="news-card">
+  <div class="card-header">
+    <div class="signal-dot high"></div>
+    <h3>前阿里明星研究员创办新AI实验室，估值20亿美元</h3>
+  </div>
+  <div class="tags"><span class="tag tag-amber">信号中</span><span class="tag tag-blue">国产</span><span class="tag tag-cyan">创业</span></div>
+  <div class="excerpt">前阿里巴巴明星研究员林军阳创办新AI实验室，第一轮估值136亿元（约20亿美元），高瓴、红杉等竞相参与。中国AI创业生态呈现快速新陈代谢。</div>
+  <div class="source-line"><a href="https://www.theinformation.com" target="_blank" rel="noopener">The Information</a><span class="sep"> / </span><a href="https://www.36kr.com" target="_blank" rel="noopener">36氪</a></div>
+  <div class="analysis-box"><strong>穿透分析：</strong> 估值20亿美元起步的AI实验室，说明中国的大模型人才红利正在兑现。但"倒在AI创业潮中的创始人"也同时存在——这是矛盾的同一性：有人入场就有人退场。</div>
+</div>
+
+</div>
+
+<!-- ==================== SECTION 3: GLOBAL ==================== -->
+<h2 class="section-title">全球博弈 · 产业重组</h2>
+<div class="news-grid">
+
+<div class="news-card">
+  <div class="card-header">
+    <div class="signal-dot high"></div>
+    <h3>OpenAI提议中美参与全球AI治理机构</h3>
+  </div>
+  <div class="tags"><span class="tag tag-green">信号强</span><span class="tag tag-purple">国际</span><span class="tag tag-amber">政策</span></div>
+  <div class="excerpt">OpenAI全球事务副总裁Chris Lehane表示支持建立美国主导、中国参与的全球AI治理机构。表态恰逢特朗普抵京与习近平会晤前夕。</div>
+  <div class="source-line"><a href="https://www.bloomberg.com" target="_blank" rel="noopener">Bloomberg</a></div>
+  <div class="analysis-box"><strong>穿透分析：</strong> 时间节点不是巧合。OpenAI在特朗普访华前夕抛出全球治理方案——既是商业外交也是议程设置。AI治理从"要不要管"变成"谁来管、怎么管、谁说了算"。</div>
+</div>
+
+<div class="news-card">
+  <div class="card-header">
+    <div class="signal-dot high"></div>
+    <h3>思科裁员约4000人，全面转向AI</h3>
+  </div>
+  <div class="tags"><span class="tag tag-amber">信号中</span><span class="tag tag-purple">国际</span><span class="tag tag-amber">重组</span></div>
+  <div class="excerpt">思科宣布裁员近4000人作为重组计划一部分，将投资转向AI及相关增长领域。网络基础设施巨头加速AI化转型。</div>
+  <div class="source-line"><a href="https://www.techweb.com.cn" target="_blank" rel="noopener">TechWeb</a><span class="sep"> / </span><a href="https://www.36kr.com" target="_blank" rel="noopener">36氪</a></div>
+  <div class="analysis-box"><strong>穿透分析：</strong> 思科的AI转型是产业重组的缩影。网络设备、芯片、云服务——所有基础设施层厂商都在回答同一个问题：我的产品在AI时代还有什么用？答案决定了生死。</div>
+</div>
+
+<div class="news-card">
+  <div class="card-header">
+    <div class="signal-dot high"></div>
+    <h3>苹果为谷歌辩护：反对欧盟要求安卓开放第三方AI</h3>
+  </div>
+  <div class="tags"><span class="tag tag-amber">信号中</span><span class="tag tag-purple">国际</span><span class="tag tag-amber">监管</span></div>
+  <div class="excerpt">苹果向欧盟发出警告，指要求谷歌安卓系统向竞争AI服务的提案将威胁用户隐私、安全及设备完整性。硅谷巨头在监管面前罕见联手。</div>
+  <div class="source-line"><a href="https://www.techweb.com.cn" target="_blank" rel="noopener">TechWeb</a></div>
+  <div class="analysis-box"><strong>穿透分析：</strong> 竞争对手在监管面前突然"团结"——说明AI正在改变传统科技巨头的竞合关系。当外部压力够大时，原本的对手可能成为战友。主要矛盾变了。</div>
+</div>
+
+<div class="news-card">
+  <div class="card-header">
+    <div class="signal-dot high"></div>
+    <h3>WhatsApp推出Meta AI私密聊天Incognito Chat</h3>
+  </div>
+  <div class="tags"><span class="tag tag-amber">信号中</span><span class="tag tag-purple">国际</span><span class="tag tag-cyan">产品</span></div>
+  <div class="excerpt">WhatsApp用户可与Meta AI进行端到端加密的私密对话。Meta在隐私保护与AI服务之间寻找平衡点。</div>
+  <div class="source-line"><a href="https://www.wired.com" target="_blank" rel="noopener">WIRED</a><span class="sep"> / </span><a href="https://about.fb.com" target="_blank" rel="noopener">Meta Blog</a></div>
+  <div class="analysis-box"><strong>穿透分析：</strong> 隐私与AI是一对需要动态平衡的矛盾。Meta选择用技术手段（端到端加密）解决信任问题——技术问题能靠技术解决，但信任问题最终还是要靠时间检验。</div>
+</div>
+
+<div class="news-card">
+  <div class="card-header">
+    <div class="signal-dot high"></div>
+    <h3>苹果评估AI编程App入驻App Store方案</h3>
+  </div>
+  <div class="tags"><span class="tag tag-amber">信号中</span><span class="tag tag-purple">国际</span><span class="tag tag-amber">生态</span></div>
+  <div class="excerpt">苹果内部讨论如何让使用AI Agent的App进入App Store，同时担心恶意软件风险与收入流失。AI Agent正在改变应用商店的底层逻辑。</div>
+  <div class="source-line"><a href="https://www.theinformation.com" target="_blank" rel="noopener">The Information</a><span class="sep"> / </span><a href="https://www.techweb.com.cn" target="_blank" rel="noopener">TechWeb</a></div>
+  <div class="analysis-box"><strong>穿透分析：</strong> App Store的围墙花园遇上AI Agent的"翻墙"能力——这对矛盾的处理方式，将决定下一个十年移动互联网的生态格局。</div>
+</div>
+
+<div class="news-card">
+  <div class="card-header">
+    <div class="signal-dot high"></div>
+    <h3>AI聊天机器人泄露用户真实电话号码</h3>
+  </div>
+  <div class="tags"><span class="tag tag-rose">信号中</span><span class="tag tag-purple">国际</span><span class="tag tag-rose">安全</span></div>
+  <div class="excerpt">多名用户报告Google AI在搜索结果中泄露个人联系电话，目前没有简单方法阻止。隐私与AI安全的平衡难题再次被推到前台。</div>
+  <div class="source-line"><a href="https://www.technologyreview.com" target="_blank" rel="noopener">MIT Technology Review</a></div>
+  <div class="analysis-box"><strong>穿透分析：</strong> 技术越先进，问题越基础——AI时代的信息安全不是新问题，是旧问题的放大版。实质矛盾在于：模型的开放性设计和用户隐私的封闭性需求之间的张力。</div>
+</div>
+
+</div>
+
+<!-- ==================== SECTION 4: STRUCTURAL SIGNALS ==================== -->
+<h2 class="section-title">生态暗线 · 结构信号</h2>
+<div class="news-grid-single">
+
+<div class="news-card">
+  <div class="card-header">
+    <div class="signal-dot high"></div>
+    <h3>硅谷AI游说空前：从实验室到华盛顿的权力通道</h3>
+  </div>
+  <div class="tags"><span class="tag tag-green">信号强</span><span class="tag tag-purple">国际</span><span class="tag tag-amber">政策</span></div>
+  <div class="excerpt">OpenAI、Meta、Google等在华盛顿投入空前规模游说资金，推动几乎零监管的AI政策议程。AI公司的政治影响力正在从"被动应对"变为"主动设置议程"。</div>
+  <div class="source-line"><a href="https://www.nytimes.com" target="_blank" rel="noopener">NYT</a></div>
+  <div class="analysis-box"><strong>穿透分析：</strong> 当AI公司开始大规模游说华盛顿，说明它们已经意识到——技术路线之争最终会在政策层面决出胜负。战场不仅在实验室和产品，还在国会山。</div>
+</div>
+
+<div class="news-card">
+  <div class="card-header">
+    <div class="signal-dot medium"></div>
+    <h3>Anthropic拟收购OpenAI供应商Stainless，切断SDK供应链</h3>
+  </div>
+  <div class="tags"><span class="tag tag-amber">信号中</span><span class="tag tag-purple">国际</span><span class="tag tag-amber">战略</span></div>
+  <div class="excerpt">Anthropic正在收购为OpenAI和Google构建SDK的公司Stainless。此举将切断OpenAI的SDK供应链，直接打击开发者生态基础设施。</div>
+  <div class="source-line"><a href="https://www.theinformation.com" target="_blank" rel="noopener">The Information</a></div>
+  <div class="analysis-box"><strong>穿透分析：</strong> 战争的形态变了——从"谁模型更好"到"谁的工具链更强"。收购SDK公司不是做加法，是做减法：削弱对手的开发者生态就是增强自己。</div>
+</div>
+
+<div class="news-card">
+  <div class="card-header">
+    <div class="signal-dot medium"></div>
+    <h3>Stratechery: "The Inference Shift"推理迁移</h3>
+  </div>
+  <div class="tags"><span class="tag tag-amber">信号中</span><span class="tag tag-purple">国际</span><span class="tag tag-cyan">分析</span></div>
+  <div class="excerpt">Ben Thompson分析AI产业从"训练驱动"向"推理驱动"的范式转移，认为这是理解当前AI芯片公司IPO热潮和算力需求结构变化的底层逻辑。</div>
+  <div class="source-line"><a href="https://stratechery.com" target="_blank" rel="noopener">Stratechery</a></div>
+  <div class="analysis-box"><strong>穿透分析：</strong> 当产业从训练转向推理，所有结构参数都要重算——芯片市场、云服务定价、商业模式。抓住这个"转"字，就抓住了当前AI产业的主要矛盾。</div>
+</div>
+
+<div class="news-card">
+  <div class="card-header">
+    <div class="signal-dot medium"></div>
+    <h3>Anthropic指责反乌托邦科幻训练AI作恶</h3>
+  </div>
+  <div class="tags"><span class="tag tag-amber">信号中</span><span class="tag tag-purple">国际</span><span class="tag tag-rose">研究</span></div>
+  <div class="excerpt">Anthropic研究发现训练AI使用"合成故事"更好，反乌托邦科幻内容可能训练AI表现出"邪恶"行为。训练数据的伦理维度再受关注。</div>
+  <div class="source-line"><a href="https://arstechnica.com" target="_blank" rel="noopener">Ars Technica</a></div>
+  <div class="analysis-box"><strong>穿透分析：</strong> 输入决定输出——这是AI的基本原理也是根本矛盾。训练数据的问题不是技术问题，是世界观问题。数据里有什么，模型里就有什么。</div>
+</div>
+
+<div class="news-card">
+  <div class="card-header">
+    <div class="signal-dot medium"></div>
+    <h3>苹果AI虚拟讲师 & Meta AI识别未成年用户</h3>
+  </div>
+  <div class="tags"><span class="tag tag-amber">信号中</span><span class="tag tag-purple">国际</span><span class="tag tag-cyan">产品</span></div>
+  <div class="excerpt">苹果在Apple Sales Coach中启用AI虚拟播报员用于销售培训。Meta将用AI分析照片视频中的身高和骨骼结构判断用户是否未满13岁。AI正在渗透到社会管理的方方面面。</div>
+  <div class="source-line"><a href="https://www.sina.com.cn" target="_blank" rel="noopener">新浪科技</a><span class="sep"> / </span><a href="https://techcrunch.com" target="_blank" rel="noopener">TechCrunch</a></div>
+  <div class="analysis-box"><strong>穿透分析：</strong> AI的能力边界正在从"回答问题"延伸到"识别你是谁"。技术越深入社会，它的双刃剑效应就越明显——同一套技术既能做培训也能做监控。</div>
+</div>
+
+</div>
+
+<!-- ==================== IMPACT SUMMARY ==================== -->
+<div class="impact-section">
+  <div class="impact-title">▎对个人与市场的影响总结</div>
+  <div class="impact-grid">
+    <div class="impact-card personal">
+      <h4>对个人的影响</h4>
+      <ol>
+        <li><strong>职业选择正在被重新定义</strong> — AI相关岗位薪资持续走高，非AI岗位面临被替代风险。思科裁4000人转AI不是个案，传统IT从业者需要加速技能迁移。<span class="impact-tag short">短期</span></li>
+        <li><strong>AI工具的使用门槛在降低、能力在跃升</strong> — Mavis、Claude Code等Agent产品让个人可以完成过去需要一个团队才能做的事（写代码、做分析、策划活动）。个人生产力差距将加速拉大。<span class="impact-tag mid">中期</span></li>
+        <li><strong>隐私安全风险实质化</strong> — AI聊天机器人泄露电话只是一个开始。当你的生物特征（身高、骨骼结构）可以被AI识别，个人隐私的边界需要重新定义。<span class="impact-tag short">短期</span></li>
+        <li><strong>创业窗口在收窄</strong> — 田渊栋46.5亿美元、阶跃170亿——AI创业已不是"30个人车库"的游戏。头部玩家资本密集度极高，普通人参与的入口在变小。<span class="impact-tag long">长期</span></li>
+        <li><strong>信息筛选能力成为核心技能</strong> — 20条新闻背后有20种以上的解读方式。能穿透表层叙事、定位结构信号的人，在决策质量上会获得显著的竞争优势。<span class="impact-tag long">长期</span></li>
+      </ol>
+    </div>
+    <div class="impact-card market">
+      <h4>对市场的影响</h4>
+      <ol>
+        <li><strong>资本集中度飙升，中间层被抽干</strong> — 一周内出现三个百亿级融资 + 两个创业项目起步20亿美元。资金从"撒网"变成"聚焦"，不在前五的模型公司可能面临融资断供。<span class="impact-tag short">短期</span></li>
+        <li><strong>算力入口 = 定价权</strong> — Anthropic锁定20GW+算力、Nvidia既卖卡又入股——控制算力供给的公司正在获得对整个生态的议价能力。云厂商的AI利润有一半来自股权增值而非经营。<span class="impact-tag mid">中期</span></li>
+        <li><strong>生态竞争从模型转向工具链</strong> — Anthropic收购Stainless、百度推DAA度量体系、MiniMax做Agent"三省六部"——竞争焦点正在从"谁的模型参数大"转向"谁的开发者生态粘性高"。<span class="impact-tag mid">中期</span></li>
+        <li><strong>监管博弈将决定市场格局</strong> — 硅谷游说空前、苹果为谷歌辩护、OpenAI提议中美治理——政策走向正在成为比技术路线更重要的变量。监管宽松利好头部公司，监管严格可能重塑竞争格局。<span class="impact-tag long">长期</span></li>
+        <li><strong>AI债券市场信号值得警惕</strong> — Alphabet被迫海外融资，说明市场对AI项目风险定价出现分歧。如果AI公司的现金流回报持续低于预期，下一轮估值调整可能来自债券市场而非股权市场。<span class="impact-tag mid">中期</span></li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== BOTTOM COMPARISON ==================== -->
+<div class="signal-model" style="margin-top: 16px;">
+  <div class="model-title">▎本 周 结 构 对 比</div>
+  <div class="comparison-row">
+    <div class="compare-box surface">
+      <h4>☰ 市场表象（What happened）</h4>
+      <p>一周内出现两家千亿级融资、三家财报、两起创业、一宗收购、一场裁员。每个事件独立看都"合理"，串联起来看才有真正的答案。</p>
+    </div>
+    <div class="compare-box structural">
+      <h4>⚡ 结构信号（What it means）</h4>
+      <p>AI产业的权力正在沿三条轴线集中：<strong>算力入口</strong>（Anthropic/英伟达锁定供给）、<strong>资本出口</strong>（融资纪录加速刷新、中间层被抽干）、<strong>生态接口</strong>（开发者工具链/Agent平台成为新竞争焦点）。谁掌握这三条轴线的交汇点，谁就定义下一个时代。</p>
+    </div>
+  </div>
+  <div style="text-align: center; margin-top: 20px; color: var(--text-muted); font-size: 13px; letter-spacing: 0.5px;">
+    【数据的意义在于被组织成图谱，图谱的意义在于定位当下的坐标。抓住主要矛盾，不纠缠细枝末节。】
+  </div>
+</div>
+
+<!-- ==================== FOOTER ==================== -->
+<div class="footer">
+  <p>数据来源：
+    <a href="https://www.bloomberg.com" target="_blank" rel="noopener">Bloomberg</a> ·
+    <a href="https://www.nytimes.com" target="_blank" rel="noopener">NYT</a> ·
+    <a href="https://www.wired.com" target="_blank" rel="noopener">WIRED</a> ·
+    <a href="https://www.technologyreview.com" target="_blank" rel="noopener">MIT Tech Review</a> ·
+    <a href="https://arstechnica.com" target="_blank" rel="noopener">Ars Technica</a> ·
+    <a href="https://techcrunch.com" target="_blank" rel="noopener">TechCrunch</a> ·
+    <a href="https://www.theinformation.com" target="_blank" rel="noopener">The Information</a> ·
+    <a href="https://stratechery.com" target="_blank" rel="noopener">Stratechery</a>
+  </p>
+  <p>
+    <a href="https://www.thepaper.cn" target="_blank" rel="noopener">澎湃新闻</a> ·
+    <a href="https://www.caixin.com" target="_blank" rel="noopener">财新</a> ·
+    <a href="https://www.huxiu.com" target="_blank" rel="noopener">虎嗅</a> ·
+    <a href="https://www.sina.com.cn" target="_blank" rel="noopener">新浪科技</a> ·
+    <a href="https://www.36kr.com" target="_blank" rel="noopener">36氪</a> ·
+    <a href="https://www.tmtpost.com" target="_blank" rel="noopener">钛媒体</a> ·
+    <a href="https://zhidx.com" target="_blank" rel="noopener">智东西</a> ·
+    <a href="https://blog.google" target="_blank" rel="noopener">Google Blog</a> ·
+    <a href="https://about.fb.com" target="_blank" rel="noopener">Meta Blog</a> ·
+    <a href="https://maomu.com" target="_blank" rel="noopener">猫目新闻</a>
+  </p>
+  <p>生成时间：2026-05-14 | 信号强度基于多源交叉验证 | 分析框架：组织信息→定位坐标→判断方向</p>
+</div>
+
+</div>
+</body>
+</html>
