@@ -44,7 +44,6 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   padding: 32px;
-  min-width: 1200px;
 }
 .container { max-width: 1400px; margin: 0 auto; }
 
@@ -376,11 +375,139 @@ body {
 .footer a { color: var(--accent); text-decoration: none; }
 .footer a:hover { text-decoration: underline; }
 
-/* RESPONSIVE */
-@media (max-width: 1100px) {
-  .model-grid { grid-template-columns: 1fr; }
-  .news-grid { grid-template-columns: 1fr; }
-  .impact-grid { grid-template-columns: 1fr; }
+/* ============================================= */
+/* RESPONSIVE: DESKTOP  (>= 1200px) — default    */
+/* ============================================= */
+/* (all base styles above apply as-is) */
+
+/* ============================================= */
+/* RESPONSIVE: TABLET  (768px – 1199px)          */
+/* ============================================= */
+@media (max-width: 1199px) {
+  body { padding: 24px; }
+  .container { max-width: 100%; }
+
+  /* signal model → 2-col: pillars + center wraps */
+  .model-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .center-circle {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    gap: 32px;
+    padding: 16px 24px;
+  }
+  .center-ring {
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+    margin-bottom: 0;
+  }
+  .center-ring span { font-size: 18px; }
+  .center-circle .ring-labels { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+
+  /* news & impact grids stay 2-col but tighter */
+  .news-grid { gap: 14px; }
+  .impact-grid { gap: 16px; }
+
+  .signal-model,
+  .impact-section {
+    padding: 28px 24px;
+  }
+}
+
+/* ============================================= */
+/* RESPONSIVE: MOBILE  (< 768px)                 */
+/* ============================================= */
+@media (max-width: 767px) {
+  body { padding: 14px; }
+
+  /* HEADER */
+  .header { padding: 24px 0 18px; margin-bottom: 20px; }
+  .header h1 { font-size: 22px; letter-spacing: 1px; }
+  .header .subtitle { font-size: 13px; }
+  .header .meta { font-size: 11px; }
+
+  /* SIGNAL MODEL */
+  .signal-model {
+    padding: 20px 16px;
+    border-radius: var(--radius-md);
+    margin-bottom: 20px;
+  }
+  .model-title { font-size: 14px; margin-bottom: 18px; }
+  .model-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .center-circle {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 12px;
+  }
+  .center-ring {
+    width: 80px;
+    height: 80px;
+  }
+  .center-ring span { font-size: 16px; }
+  .center-circle .ring-labels { flex-direction: column; gap: 4px; font-size: 12px; }
+
+  .pillar { padding: 14px; }
+  .pillar h3 { font-size: 13px; }
+  .pillar-item { font-size: 12px; padding: 5px 0; }
+
+  /* COMPARISON BOX */
+  .comparison-row { grid-template-columns: 1fr; gap: 12px; margin-top: 16px; }
+  .compare-box { padding: 12px 14px; }
+  .compare-box h4 { font-size: 12px; }
+  .compare-box p { font-size: 12px; }
+
+  /* SECTION TITLES */
+  .section-title {
+    font-size: 17px;
+    margin: 24px 0 14px;
+    padding-left: 10px;
+  }
+
+  /* NEWS GRID */
+  .news-grid { grid-template-columns: 1fr; gap: 12px; margin-bottom: 16px; }
+
+  /* NEWS CARDS */
+  .news-card { padding: 14px; }
+  .news-card .card-header { gap: 8px; }
+  .news-card h3 { font-size: 14px; }
+  .news-card .excerpt { font-size: 12px; line-height: 1.5; }
+  .news-card .analysis-box { font-size: 11px; padding: 8px 10px; }
+  .source-line { font-size: 10px; word-break: break-all; }
+  .tag { font-size: 10px; padding: 1px 6px; }
+
+  /* IMPACT */
+  .impact-section {
+    padding: 20px 16px;
+    border-radius: var(--radius-md);
+  }
+  .impact-title { font-size: 14px; margin-bottom: 16px; }
+  .impact-grid { grid-template-columns: 1fr; gap: 12px; }
+  .impact-card { padding: 14px; }
+  .impact-card h4 { font-size: 13px; }
+  .impact-card ol { font-size: 12px; padding-left: 14px; }
+
+  /* FOOTER */
+  .footer { font-size: 10px; padding: 16px 0; }
+  .footer p { margin-bottom: 4px; }
+}
+
+/* ============================================= */
+/* RESPONSIVE: NARROW MOBILE  (< 420px)          */
+/* ============================================= */
+@media (max-width: 419px) {
+  body { padding: 10px; }
+  .header h1 { font-size: 18px; }
+  .news-card h3 { font-size: 13px; }
+  .signal-model,
+  .impact-section { padding: 14px 10px; }
+  .news-card { padding: 10px; }
+  .source-line a { display: inline-block; margin-bottom: 2px; }
 }
 </style>
 </head>
