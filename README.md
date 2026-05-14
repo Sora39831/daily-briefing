@@ -1,6 +1,22 @@
-# AI 大模型 · 每日信号评估简报
+# Daily Briefing
 
-部署于 Cloudflare Pages：https://ai-daily-briefing.pages.dev
+多品类日报汇总仓库。每个子目录对应一种日报品类。
 
-每日自动更新，覆盖 15+ 国内外信源（Bloomberg、NYT、WIRED、澎湃、财新、36氪等），
-从"数据锚定 × 权威溯源 × 闭环推理"三维模型评估信息质量。
+## 日报列表
+
+| 品类 | 目录 | 最新 | 链接 |
+|------|------|------|------|
+| AI 大模型信号评估 | `ai-daily-briefing/` | 2026-05-13 | [查看](https://daily-briefing-5d4.pages.dev) |
+| ... | 更多即将上线 | | |
+
+---
+
+### 添加新品类
+
+```
+mkdir my-report-category
+cp /path/to/report.html my-report-category/index.html
+git add -A && git commit -m "add: my-report-category" && git push
+```
+
+Cloudflare Pages 自动部署，根目录为仓库根目录（可通过 `root_dir` 配置调整）。
